@@ -1,0 +1,7 @@
+.env
+.DS_Store
+test.env
+NOTES.txt
+__pycache__
+my-test-env
+.vscode
