@@ -1,6 +1,6 @@
-# HTTP Archive To Gherkin Scenarios Demo Using GenAI
+# HTTP Archive To Gherkin Scenarios Demo
 
-A demo project that provides a very basic example of taking the input HTTP archive ([HAR](https://en.wikipedia.org/wiki/HAR_(file_format))) data recorded by a browser for a user interfacing with a web application and using an LLM to describe the Gherkin features and scenarios of the application that the log data implies.
+A demo project that provides a very basic example of taking the input HTTP archive ([HAR](https://en.wikipedia.org/wiki/HAR_(file_format))) data (recorded by a browser for a user interfacing with a web application) and using this data with an LLM to describe the Gherkin features and scenarios of the application.
 
 
 ## Prerequisites Before Running For A First Time
