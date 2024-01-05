@@ -96,5 +96,8 @@ TEMP = 0.7
 AZURE_TYPE = "azure"
 
 
+##
+# Main
+##
 if __name__ == "__main__":
     main()
