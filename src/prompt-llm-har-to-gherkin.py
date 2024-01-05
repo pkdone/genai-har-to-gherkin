@@ -1,3 +1,4 @@
+import sys
 import os
 from dotenv import load_dotenv
 from openai import OpenAI, AzureOpenAI
@@ -13,11 +14,6 @@ def main():
         args = get_arguments("Use an LLM to introspect a HTTP Archive (HAR) file to describe the "
                              "Gherkin features/scenarious it implies.")
         config = load_api_config()
-
-        if not all(value for value in config.values()):
-            print("Missing API configuration. Please check your .env file.")
-            exit(1)
-
         log_data = read_content(args.input)
         prompt = build_templated_prompt(log_data)
         response_text = prompt_llm_get_response(config, prompt)
@@ -25,6 +21,7 @@ def main():
 
     except Exception as e:
         print(f"An error occurred: {e}")
+        print(sys.exc_info()[2])
         exit(1)
 
 
@@ -34,11 +31,11 @@ def main():
 def load_api_config():
     load_dotenv()
     config = {
-        "api_key": os.getenv("API_KEY").strip(),
-        "api_model": os.getenv("API_MODEL").strip(),
-        "api_base": os.getenv("API_BASE").strip(),
-        "api_type": os.getenv("API_TYPE").strip(),
-        "api_version": os.getenv("API_VERSION").strip()
+        "api_key": os.getenv("API_KEY", "").strip(),
+        "api_model": os.getenv("API_MODEL", "").strip(),
+        "api_base": os.getenv("API_BASE", "").strip(),
+        "api_type": os.getenv("API_TYPE", "").strip(),
+        "api_version": os.getenv("API_VERSION", "").strip()
     }
 
     if not config.get("api_key"):
