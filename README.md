@@ -38,7 +38,7 @@ A demo project that provides a very basic example of taking the input HTTP archi
     python src/extract-har-entities.py -i ~/localhost.har > ~/reduced-localhost.har
     ```
 
-1. From the terminal, execute the second to build a prompt asking an LLM to generate Gherkin features/scenarios for the given reduced-size HTTP Archive logged data.
+1. From the terminal, execute the second script to build a prompt asking an LLM to generate Gherkin features/scenarios for the given reduced-size HTTP Archive logged data.
 
     ```console
     python src/prompt-llm-har-to-gherkin.py -i ~/reduced-localhost.har
