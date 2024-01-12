@@ -39,10 +39,10 @@ def load_api_config():
     }
 
     if not config.get("api_key"):
-        raise ValueError("No 'api_key' value defined in '.env' file or env var")
+        raise ValueError("No 'API_KEY' value defined in '.env' file or env var")
 
     if not config.get("api_model"):
-        raise ValueError("No 'api_model' value defined in '.env' file or env var")
+        raise ValueError("No 'API_MODEL' value defined in '.env' file or env var")
 
     return config
 
